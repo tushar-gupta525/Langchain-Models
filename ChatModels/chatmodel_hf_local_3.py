@@ -1,4 +1,6 @@
+#In this chatbot model we are downloading the model first into our system locally, then text generation is done.
 import os
+#Below given 2 lines of code will force TinyLlama model to be downloaded in drive-D:/
 os.environ["HF_HOME"] = "D:/huggingface_cache"
 os.environ["TRANSFORMERS_CACHE"] = "D:/huggingface_cache"
 
@@ -17,3 +19,4 @@ llm = HuggingFacePipeline.from_model_id(
 model = ChatHuggingFace(llm=llm)
 result = model.invoke("Explain Generative AI in simple words.")
 print(result.content)
+
